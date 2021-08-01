@@ -1,0 +1,26 @@
+{
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Marcin Czarnecki",
+      "email": "scyzoryck@gmail.com",
+      "role": "author"
+    }
+  ],
+  "require": {
+    "symfony/validator": "^5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Scyzoryck\\Benchmarks\\Validators\\": "..",
+      "Scyzoryck\\Benchmarks\\Abstract\\": "../../src"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+      "php": "8.0.1"
+    }
+  }
+}

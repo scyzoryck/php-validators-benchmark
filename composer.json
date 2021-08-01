@@ -1,0 +1,22 @@
+{
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Marcin Czarnecki",
+      "email": "scyzoryck@gmail.com",
+      "role": "author"
+    }
+  ],
+  "require": {
+    "phpbench/phpbench": "^1.0"
+  },
+  "autoload": {
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+      "php": "8.0.1"
+    }
+  }
+}

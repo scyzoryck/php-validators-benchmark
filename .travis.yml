@@ -1,0 +1,18 @@
+language: php
+
+matrix:
+    fast_finish: true
+    include:
+        - php: 8.0
+
+install:
+    - phpenv config-rm xdebug.ini || echo 'xdebug not available'
+    - |
+        for file in `find benchmarks/*/composer.json composer.json`; do
+            cd /app/`dirname ${file}`;
+            composer install;
+        done
+
+script:
+    - ./vendor/bin/phpbench run --report=bench --progress=travis
+
