@@ -2,7 +2,7 @@
 
 Benchmarks of popular PHP Validation libraries. Please keep in mind that libraries provides different features and functionalities - so performance should not be the only one factor to choose libraries for your needs :) 
 
-The result of the benchmark is directly available on travis: https://travis-ci.org/scyzoryck/php-validators-benchmark
+The result of the benchmark is directly available on travis: https://travis-ci.com/scyzoryck/php-validators-benchmark
 
 This repository is inspired by [php-serializers/ivory-serializer-benchmark](https://github.com/php-serializers/ivory-serializer-benchmark).
 
