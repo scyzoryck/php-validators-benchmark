@@ -7,12 +7,14 @@ matrix:
 
 install:
     - phpenv config-rm xdebug.ini || echo 'xdebug not available'
+    - composer install
     - |
-        for file in `find benchmarks/*/composer.json composer.json`; do
-            cd /app/`dirname ${file}`;
+        for file in `find benchmarks/*/composer.json`; do
+            cd `dirname ${file}`;
             composer install;
+            cd ../..;
         done
 
 script:
-    - ./vendor/bin/phpbench run --report=bench --progress=travis
+    - ./vendor/bin/phpbench run --report=bench
 
