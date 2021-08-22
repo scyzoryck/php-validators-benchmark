@@ -11,7 +11,7 @@ install:
     - |
         for file in `find benchmarks/*/composer.json`; do
             cd `dirname ${file}`;
-            composer install;
+            composer install --optimize-autoloader --classmap-authoritative;
             cd ../..;
         done
 

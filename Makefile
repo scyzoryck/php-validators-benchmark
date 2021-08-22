@@ -10,6 +10,16 @@ init: $(CODEDIR)/benchmarks/*/composer.json $(CODEDIR)/composer.json
 	  		composer:2.1.5 install; \
 	done
 
+composer-optimise: $(CODEDIR)/benchmarks/*/composer.json $(CODEDIR)/composer.json
+	for file in $^ ; do \
+		docker run --rm --tty \
+			--volume $$PWD:/app \
+			--workdir /app/`dirname $${file}` \
+			--volume ${COMPOSER_CACHE_DIR:-$$HOME/.cache/composer}:$$COMPOSER_CACHE_DIR \
+			--user $$(id -u):$$(id -g) \
+	  		composer:2.1.5 install --optimize-autoloader --classmap-authoritative; \
+	done
+
 test:
 	docker run --rm \
 		--volume $$PWD:/app \
