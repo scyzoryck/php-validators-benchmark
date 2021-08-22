@@ -1,0 +1,27 @@
+{
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Marcin Czarnecki",
+      "email": "scyzoryck@gmail.com",
+      "role": "author"
+    }
+  ],
+  "require": {
+    "illuminate/validation": "^8.0",
+    "illuminate/translation": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Scyzoryck\\Benchmarks\\Validators\\": "..",
+      "Scyzoryck\\Benchmarks\\Abstract\\": "../../src"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+      "php": "8.0.1"
+    }
+  }
+}
