@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Scyzoryck\Benchmarks\Validators\Webmozart;
+namespace Scyzoryck\Benchmarks\Validators\Beberlei;
 
 use Assert\Assertion;
 use Scyzoryck\Benchmarks\Abstract\AbstractValidatorBench;
