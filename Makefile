@@ -25,7 +25,7 @@ test:
 		--volume $$PWD:/app \
 		--workdir /app \
 		--user $$(id -u):$$(id -g) \
-		php:8.0-cli php ./vendor/bin/phpbench run --report=bench
+		php:8.0.12-cli php ./vendor/bin/phpbench run --report=bench
 
 bash-php:
 	docker run --rm -it \
