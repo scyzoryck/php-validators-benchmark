@@ -27,6 +27,13 @@ test:
 		--user $$(id -u):$$(id -g) \
 		php:8.0.12-cli php ./vendor/bin/phpbench run --report=bench
 
+test-php81:
+	docker run --rm \
+		--volume $$PWD:/app \
+		--workdir /app \
+		--user $$(id -u):$$(id -g) \
+		php:8.1-rc-cli php ./vendor/bin/phpbench run --report=bench
+
 bash-php:
 	docker run --rm -it \
 		--volume $$PWD:/app \
