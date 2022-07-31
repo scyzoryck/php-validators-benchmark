@@ -37,6 +37,7 @@ To run all benchmarks locally you can run:
 ```sh
 make test // for tests with PHP 8.0
 make test-php81 // for tests with PHP 8.1
+make test-php82 // for tests with PHP 8.2
 ```
 
 Composer and PHP are served from separate containers. To run bash in each container you can use `make bash-composer` or `make bash-php` commands.  

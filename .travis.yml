@@ -4,6 +4,7 @@ matrix:
     fast_finish: true
     include:
         - php: 8.0
+        - php: 8.1
 
 install:
     - phpenv config-rm xdebug.ini || echo 'xdebug not available'

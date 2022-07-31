@@ -20,6 +20,16 @@ composer-optimise: $(CODEDIR)/benchmarks/*/composer.json $(CODEDIR)/composer.jso
 	  		composer:2.1.5 install --optimize-autoloader --classmap-authoritative; \
 	done
 
+composer-update: $(CODEDIR)/benchmarks/*/composer.json $(CODEDIR)/composer.json
+	for file in $^ ; do \
+		docker run --rm --tty \
+			--volume $$PWD:/app \
+			--workdir /app/`dirname $${file}` \
+			--volume ${COMPOSER_CACHE_DIR:-$$HOME/.cache/composer}:$$COMPOSER_CACHE_DIR \
+			--user $$(id -u):$$(id -g) \
+	  		composer:2.1.5 update; \
+	done
+	
 test:
 	docker run --rm \
 		--volume $$PWD:/app \
@@ -33,6 +43,13 @@ test-php81:
 		--workdir /app \
 		--user $$(id -u):$$(id -g) \
 		php:8.1-rc-cli php ./vendor/bin/phpbench run --report=bench
+
+test-php82:
+	docker run --rm \
+		--volume $$PWD:/app \
+		--workdir /app \
+		--user $$(id -u):$$(id -g) \
+		php:8.2-rc-cli php ./vendor/bin/phpbench run --report=bench
 
 bash-php:
 	docker run --rm -it \
